@@ -1,9 +1,23 @@
-import { Text, View } from "react-native"
+import { Text, View } from 'react-native';
 
-export default function DashboardScreen({navigation}) {
+export default function DashboardScreen({ navigation }) {
+  function renderLegionItem(itemData) {
+    function pressHandler() {
+      navigation.navigate('Legion', { categoryId: itemData.item.id });
+    }
+
     return (
-        <View>
-        <Text>Dashboard Screen</Text>
-        </View>
-    )
+      <CategoryGridTile
+        title={itemData.item.title}
+        color={itemData.item.color}
+        onPress={pressHandler}
+      />
+    );
+  }
+
+  return (
+    <View>
+      <Text>Dashboard Screen</Text>
+    </View>
+  );
 }

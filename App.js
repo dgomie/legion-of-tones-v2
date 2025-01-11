@@ -22,28 +22,28 @@ export default function App() {
           }}
         >
           <Stack.Screen
-            name="DashboardScreen"
+            name="Dashboard"
             component={DashboardScreen}
             options={{
               title: 'Dashboard',
             }}
           />
           <Stack.Screen
-            name="LegionScreen"
+            name="Legion"
             component={LegionScreen}
             options={{
               title: 'Legion',
             }}
           />
           <Stack.Screen
-            name="LoginScreen"
+            name="Login"
             component={LoginScreen}
             options={{
               title: 'Login',
             }}
           />
           <Stack.Screen
-            name="SignUpScreen"
+            name="SignUp"
             component={SignUpScreen}
             options={{
               title: 'Sign Up',
