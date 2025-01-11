@@ -1,9 +1,9 @@
 import { Text, View } from "react-native"
 
-export default function DashboardScreen({navigation}) {
+export default function LegionScreen({navigation}) {
     return (
         <View>
-        <Text>Dashboard Screen</Text>
+        <Text>Legion Screen</Text>
         </View>
     )
 }
