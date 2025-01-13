@@ -3,6 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DashboardScreen from './screens/DashboardScreen';
+import LegionScreen from './screens/LegionScreen';
+import LoginScreen from './screens/LoginScreen';
+import SignUpScreen from './screens/SignUpScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,10 +22,31 @@ export default function App() {
           }}
         >
           <Stack.Screen
-            name="DashboardScreen"
+            name="Dashboard"
             component={DashboardScreen}
             options={{
               title: 'Dashboard',
+            }}
+          />
+          <Stack.Screen
+            name="Legion"
+            component={LegionScreen}
+            options={{
+              title: 'Legion',
+            }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{
+              title: 'Login',
+            }}
+          />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUpScreen}
+            options={{
+              title: 'Sign Up',
             }}
           />
         </Stack.Navigator>
