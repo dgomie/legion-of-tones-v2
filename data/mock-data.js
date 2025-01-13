@@ -1,5 +1,5 @@
-import User from './user';
-import Legion from './legion';
+import User from '../models/user';
+import Legion from '../models/legion';
 
 
 export const mockUsers = [
