@@ -1,4 +1,6 @@
-import { Text, View } from 'react-native';
+import { Text, View, FlatList } from 'react-native';
+import { mockLegions } from '../data/mock-data';
+import LegionGridTile from '../components/LegionGridTile';
 
 export default function DashboardScreen({ navigation }) {
   function renderLegionItem(itemData) {
@@ -7,9 +9,8 @@ export default function DashboardScreen({ navigation }) {
     }
 
     return (
-      <CategoryGridTile
+      <LegionGridTile
         title={itemData.item.title}
-        color={itemData.item.color}
         onPress={pressHandler}
       />
     );
@@ -17,7 +18,12 @@ export default function DashboardScreen({ navigation }) {
 
   return (
     <View>
-      <Text>Dashboard Screen</Text>
+      <FlatList
+        data={mockLegions}
+        keyExtractor={(item) => item.id}
+        renderItem={renderLegionItem}
+        numColumns={2}
+      />
     </View>
   );
 }

@@ -1,6 +1,6 @@
 import { Pressable, Text, View, StyleSheet, Platform } from 'react-native';
 
-export default function LegionGridTile({ title, color, onPress }) {
+export default function LegionGridTile({ title, onPress }) {
   return (
     <View style={styles.gridItem}>
       <Pressable
@@ -11,7 +11,7 @@ export default function LegionGridTile({ title, color, onPress }) {
         ]}
         onPress={onPress}
       >
-        <View style={[styles.innerContainer, { backgroundColor: color }]}>
+        <View style={styles.innerContainer}>
           <Text style={styles.title}>{title}</Text>
         </View>
       </Pressable>
