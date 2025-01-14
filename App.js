@@ -6,50 +6,47 @@ import DashboardScreen from './screens/DashboardScreen';
 import LegionScreen from './screens/LegionScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignUpScreen from './screens/SignUpScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
-const Stack = createNativeStackNavigator();
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <>
       <StatusBar style="light" />
       <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: { backgroundColor: 'cadetblue' },
-            headerTintColor: 'white',
-            contentStyle: { backgroundColor: 'white' },
-          }}
-        >
-          <Stack.Screen
+        <Tab.Navigator>
+          <Tab.Screen
             name="Dashboard"
             component={DashboardScreen}
             options={{
-              title: 'Dashboard',
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="home-outline" color={color} size={size} />
+              ),
             }}
           />
-          <Stack.Screen
-            name="Legion"
+          <Tab.Screen
+            name="Legions"
             component={LegionScreen}
             options={{
-              title: 'Legion',
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="musical-notes-outline" color={color} size={size} />
+              ),
             }}
           />
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
+          <Tab.Screen
+            name="Profile"
+            component={ProfileScreen}
             options={{
-              title: 'Login',
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="person" color={color} size={size} />
+              ),
             }}
           />
-          <Stack.Screen
-            name="SignUp"
-            component={SignUpScreen}
-            options={{
-              title: 'Sign Up',
-            }}
-          />
-        </Stack.Navigator>
+        </Tab.Navigator>
       </NavigationContainer>
     </>
   );
