@@ -6,11 +6,12 @@ import DashboardScreen from './screens/DashboardScreen';
 import LegionScreen from './screens/LegionScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignUpScreen from './screens/SignUpScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
-
 
 export default function App() {
   return (
@@ -18,9 +19,33 @@ export default function App() {
       <StatusBar style="light" />
       <NavigationContainer>
         <Tab.Navigator>
-          <Tab.Screen name="Dashboard" component={DashboardScreen} />
-          <Tab.Screen name="Legion" component={LegionScreen} />
-          <Tab.Screen name="Profile" component={ProfileScreen} />
+          <Tab.Screen
+            name="Dashboard"
+            component={DashboardScreen}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="home-outline" color={color} size={size} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Legions"
+            component={LegionScreen}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="musical-notes-outline" color={color} size={size} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Profile"
+            component={ProfileScreen}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="person" color={color} size={size} />
+              ),
+            }}
+          />
         </Tab.Navigator>
       </NavigationContainer>
     </>
