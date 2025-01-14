@@ -7,49 +7,21 @@ import LegionScreen from './screens/LegionScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignUpScreen from './screens/SignUpScreen';
 
-const Stack = createNativeStackNavigator();
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
 
 export default function App() {
   return (
     <>
       <StatusBar style="light" />
       <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: { backgroundColor: 'cadetblue' },
-            headerTintColor: 'white',
-            contentStyle: { backgroundColor: 'white' },
-          }}
-        >
-          <Stack.Screen
-            name="Dashboard"
-            component={DashboardScreen}
-            options={{
-              title: 'Dashboard',
-            }}
-          />
-          <Stack.Screen
-            name="Legion"
-            component={LegionScreen}
-            options={{
-              title: 'Legion',
-            }}
-          />
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{
-              title: 'Login',
-            }}
-          />
-          <Stack.Screen
-            name="SignUp"
-            component={SignUpScreen}
-            options={{
-              title: 'Sign Up',
-            }}
-          />
-        </Stack.Navigator>
+        <Tab.Navigator>
+          <Tab.Screen name="Dashboard" component={DashboardScreen} />
+          <Tab.Screen name="Legion" component={LegionScreen} />
+          <Tab.Screen name="Profile" component={ProfileScreen} />
+        </Tab.Navigator>
       </NavigationContainer>
     </>
   );
