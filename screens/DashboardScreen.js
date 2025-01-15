@@ -5,7 +5,7 @@ import LegionGridTile from '../components/LegionGridTile';
 export default function DashboardScreen({ navigation }) {
   function renderLegionItem(itemData) {
     function pressHandler() {
-      navigation.navigate('Legion', { categoryId: itemData.item.id });
+      navigation.navigate('Legions', { legionId: itemData.item.id });
     }
 
     return (
