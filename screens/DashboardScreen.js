@@ -1,4 +1,4 @@
-import { Text, View, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { mockLegions } from '../data/mock-data';
 import LegionGridTile from '../components/LegionGridTile';
 
